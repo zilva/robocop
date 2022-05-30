@@ -1,0 +1,17 @@
+.square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    border-radius: 10px;
+    margin: 0.5rem;
+    width: 5rem;
+    height: 5rem;
+}
+
+.robo {
+    background-image: url("../images/robo.png");
+    background-size: cover;
+    width: 80%;
+    height: 80%;
+}
