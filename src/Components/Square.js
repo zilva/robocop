@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Robot from './Robot';
 import './Square.css'
 
 const Square = ({square, currentSquare}) => {
+    const [showRobo, setShowRobo] = useState(null);
+
+    useEffect(() => {
+        if( square.x === currentSquare.x && square.y === currentSquare.y ) {
+            setShowRobo(true)
+        } else {
+            setShowRobo(false)
+        }
+    },[square,currentSquare])
+
     return (
         <div className='square'>
-            <div className={`${
-                square.x === currentSquare.x && square.y === currentSquare.y? 'robo' : ''
-            }`}>
-
-            </div>
+            {showRobo && <Robot />}
         </div>
     );
 }
